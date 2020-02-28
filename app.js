@@ -25,10 +25,16 @@ app.use(cookieParser());
 // Lugar donde se guardan los ficheros estáticos (imagenes, videos, css, javascripts,...)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Creamos un MW global para todas las rutas
+app.use((req, res, next) => {
+  console.log(new Date());
+  next();
+});
+
 // LO MÁS IMPORTANTE: Rutas GENERALES que gestionamos. Podremos incluir más, para gestionar el resto de rutas de nuestro proyecto (p.e: /products). Las rutas específicas las gestionaremos dentro de cada módulo concreto
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('/products', productsRouter);
+// Ejemplo: app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
