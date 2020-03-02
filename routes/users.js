@@ -20,13 +20,13 @@ router.get('/new', (req, res) => {
   res.send('GET para crear usuario');
 });
 
-// GET http://localhost/3000/users/:userId
+// GET http://localhost:3000/users/:userId
 router.get('/:userId', (req, res) => {
   console.log(req.params);
   res.send(`Id del usuario: ${req.params.userId}`);
 });
 
-// POST http://localhost/3000/users/new
+// POST http://localhost:3000/users/new
 router.post('/new', (req, res) => {
   console.log(req.body);
   console.log(req.headers["content-type"]);
