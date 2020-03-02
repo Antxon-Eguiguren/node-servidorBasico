@@ -1,5 +1,42 @@
-extends layout
+extends layout.pug
 
 block content
-  h1= title
-  p Welcome to #{title}
+  //- Comentarios en PUG
+  // Comentario HTML (se ve al inspeccionar el código)
+  - const palabras = ["perro", "casa", "coche"]
+  h1#cabecera.principal.rojo.text-center Título h1
+  div.primero
+    p Párrafo 1
+    p Párrafo 2
+    a(href="https://google.es") Ir a Google
+    ul
+      li Uno
+      li Dos
+      li= palabras[2] 
+  .segundo(style=estilos)
+    h2= title
+    p Mi título es #{title}
+    p Array de números #{arrNumeros}
+    img(src=urlImagen, width="200", alt="Playa")
+  button.btn-primary Botón
+
+  .tercero
+    case randomNum
+      when 0
+        p Ha salido el número 0
+      when 1
+        p Ha salido el número 1
+      when 2
+        p Ha salido el número 2
+      default
+        p Número no reconocido
+
+  .cuarto
+    ul
+      each numero, indice in arrNumeros
+        li Número del array: #{numero} Índice del array: #{indice}
+      else
+        li No hay números en el array
+
+block piepagina
+  p Footer para el index

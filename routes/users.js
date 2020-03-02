@@ -26,4 +26,11 @@ router.get('/:userId', (req, res) => {
   res.send(`Id del usuario: ${req.params.userId}`);
 });
 
+// POST http://localhost/3000/users/new
+router.post('/new', (req, res) => {
+  console.log(req.body);
+  console.log(req.headers["content-type"]);
+  res.send('Usuario creado');
+});
+
 module.exports = router;
