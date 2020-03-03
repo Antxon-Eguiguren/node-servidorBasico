@@ -10,7 +10,9 @@ router.get('/', function (req, res, next) {
     arrNumeros: [1, 2, 3],
     estilos: { color: 'white', 'background-color': 'blue' },
     urlImagen: 'https://img.freepik.com/foto-gratis/playa-tropical_74190-188.jpg?size=626&ext=jpg',
-    randomNum: Math.floor(Math.random() * 3)
+    randomNum: Math.floor(Math.random() * 3),
+    arrTextos: ['Texto 1', 'Texto 2', 'Texto 3', 'Texto 4'],
+    pLista: ['Perro', 'Gato', 'Cocodrilo']
   });
 });
 

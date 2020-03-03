@@ -1,3 +1,16 @@
+mixin parrafos(arrTextos)
+  each texto in arrTextos
+    p= texto
+  else
+    p El array no tiene elementos
+
+mixin lista(pLista)
+  ul
+    each item in pLista
+      li= item
+    else
+      li La lista no tiene elementos
+
 doctype html
 html
   head
